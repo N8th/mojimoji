@@ -1,1 +1,977 @@
-<!-- Hello World  -->
+<html>
+  <head>
+    <title>Bitmoji URL Generator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #8bbd90;
+      }
+
+      .container {
+        max-width: 100vw;
+        margin: 0 auto;
+        background-color: #88cf97;
+        background-image: url("https://i.ibb.co/sy2QP28/bitmoji.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000, -2px 2px 0 #000,
+          2px 2px 0 #000;
+      }
+
+      h2 {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000, -2px 2px 0 #000,
+          2px 2px 0 #000;
+      }
+      h2,a{
+          color:white;
+      }
+
+      .controls {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .label {
+        font-weight: bold;
+        display: flex;
+        align-items: flex-end;
+        margin: 2rem auto 0.5rem auto;
+      }
+
+      .input {
+        padding: 10px;
+        border: 1px solid #45c25a;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 25%;
+        margin: 0 auto;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 175px;
+        margin: 0 auto;
+        margin-top: 1%;
+      }
+
+      .button:hover {
+        background-color: #3f8b43;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .grid img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .grid .number {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 5px;
+    display: none;
+      }
+
+      /* container */
+      .copy-buttons,
+      .presetGenderContainer,
+      .presetOtherContainer,
+      .presetGenderSelector {
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+        flex-direction: row;
+      }
+
+      /* buttons */
+      .copyButton {
+        margin: 10px;
+      }
+
+      .presetOtherContainer,
+      .presetGenderSelector {
+        width: 100%;
+      }
+
+      .divPreset1,
+      .divPreset2,
+      .divPreset3,
+      .divPreset4,
+      .divPreset5,
+      .divPreset6,
+      .divPreset7,
+      .divPreset8,
+      .divPreset9,
+      .divPreset2dAvatar,
+      .divPreset3dAvatar,
+      .divGender1,
+      .divGender2 {
+        margin: auto;
+        margin: 2rem auto 0.5rem auto;
+      }
+
+      .presetLabel,
+      .genderLabel {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2><a href="https://www.snapchat.com/add/a0a00a0a00a0a" target="_blank">@a0a00a0a00a0a</a> on snapchat</h2>
+      <div class="controls">
+        <!-- <label for="firstHalfUrlInput" class="label">First Half URL:</label><input type="text" id="firstHalfUrlInput" class="input"><label for="secondHalfUrlInput" class="label">Second Half URL:</label><input type="text" id="secondHalfUrlInput" class="input"> -->
+          <h1>Select a Gender to use Options below.</h1>
+        <div class="presetGenderSelector">
+          <div class="divGender1">
+            <input
+              type="radio"
+              name="gender"
+              class="genderInput"
+              id="gender1"
+              value="gender1"
+              checked=""
+            />
+            <label for="gender1" class="label genderLabel">Male Gender</label>
+          </div>
+          <div class="divGender2">
+            <input
+              type="radio"
+              name="gender"
+              class="genderInput"
+              id="gender2"
+              value="gender2"
+              checked=""
+            />
+            <label for="gender2" class="label genderLabel">Female Gender</label>
+          </div>
+        </div>
+        <div class="presetOtherContainer">
+          <div class="divPreset2">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset2"
+              value="preset2"
+              checked=""
+            />
+            <label for="preset2" class="label presetLabel">Outfits</label>
+          </div>
+          <div class="divPreset3">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset3"
+              value="preset3"
+              checked=""
+            />
+            <label for="preset3" class="label presetLabel">Hat/Glasses</label>
+          </div>
+
+          <div class="divPreset4">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset4"
+              value="preset4"
+            />
+            <label for="preset4" class="label presetLabel">Outerwear</label>
+          </div>
+
+          <div class="divPreset5">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset5"
+              value="preset5"
+            />
+            <label for="preset5" class="label presetLabel">Tops</label>
+          </div>
+
+          <div class="divPreset6">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset6"
+              value="preset6"
+            />
+            <label for="preset6" class="label presetLabel">Shoes</label>
+          </div>
+
+          <div class="divPreset7">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset7"
+              value="preset7"
+            />
+            <label for="preset7" class="label presetLabel">Bottoms</label>
+          </div>
+
+          <div class="divPreset2dAvatar">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset2dAvatar"
+              value="preset2dAvatar"
+            />
+            <label for="preset2dAvatar" class="label presetLabel"
+              >2d Avatar History</label
+            >
+          </div>
+          <div class="divPreset3dAvatar">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset3dAvatar"
+              value="preset3dAvatar"
+            />
+            <label for="preset3dAvatar" class="label presetLabel"
+              >3d Avatar History</label
+            >
+          </div>
+        </div>
+        <label for="minInput" class="label">Min Number:</label>
+        <input type="number" id="minInput" class="input" />
+        <label for="maxInput" class="label">Max Number:</label>
+        <input type="number" id="maxInput" class="input" />
+        <label for="batchSizeInput" class="label">Batch Size:</label>
+        <input type="number" id="batchSizeInput" class="input" value="1000" />
+        <label for="minContainerWidthInput" class="label"
+          >Minimum Container Width:</label
+        >
+        <input
+          type="number"
+          id="minContainerWidthInput"
+          class="input"
+          value="100"
+        />
+        <label for="customNumbersInput" class="label"
+          >Custom Numbers (comma-separated):</label
+        >
+        <input type="text" id="customNumbersInput" class="input" />
+
+        <button onclick="generateUrls()" class="button">Generate URLs</button>
+      </div>
+      <div class="copy-buttons">
+        <button onclick="copyIds()" class="button copyButton">
+          Copy All IDs
+        </button>
+        <button onclick="copyPhotos()" class="button copyButton">
+          Copy All Photos
+        </button>
+        <button onclick="copyAll()" class="button copyButton">
+          Copy Everything
+        </button>
+      </div>
+    </div>
+    <div class="grid" id="imageGrid"></div>
+    <script>
+      function createImageContainer(imageUrl, number) {
+        var container = document.createElement("div");
+        container.classList.add("image-container");
+        var image = new Image();
+        image.src = imageUrl;
+        image.onerror = function () {
+          // Remove image element and container if it fails to load
+          var parentContainer = this.parentNode;
+          parentContainer.parentNode.removeChild(parentContainer);
+        };
+        image.onload = function () {
+          // Remove image element and container if the container has a width smaller than the specified minimum width
+          var parentContainer = this.parentNode;
+          var containerWidth = parentContainer.offsetWidth;
+          var minContainerWidth = parseInt(
+            document.getElementById("minContainerWidthInput").value
+          );
+          if (containerWidth < minContainerWidth) {
+            parentContainer.parentNode.removeChild(parentContainer);
+          }
+        };
+        var numberElement = document.createElement("div");
+        numberElement.classList.add("number");
+        numberElement.textContent = number;
+        container.appendChild(image);
+        container.appendChild(numberElement);
+        return container;
+      }
+
+      function generateUrls() {
+        var minInput = document.getElementById("minInput").value.trim();
+        var maxInput = document.getElementById("maxInput").value.trim();
+        var batchSize = parseInt(
+          document.getElementById("batchSizeInput").value
+        );
+        var imageGrid = document.getElementById("imageGrid");
+
+        var numbers;
+        if (minInput !== "" && maxInput !== "") {
+          var minNumber = parseInt(minInput);
+          var maxNumber = parseInt(maxInput);
+          if (isNaN(minNumber) || isNaN(maxNumber)) {
+            alert("Please enter valid numbers for min and max.");
+            return;
+          }
+          numbers = [];
+          for (var i = minNumber; i <= maxNumber; i++) {
+            numbers.push(i);
+          }
+        } else {
+          var customNumbersInput = document
+            .querySelector("#customNumbersInput")
+            .value.trim();
+          if (customNumbersInput === "") {
+            alert("Please enter a list of numbers or specify min and max.");
+            return;
+          }
+          numbers = customNumbersInput.split(",").map(Number);
+        }
+
+        imageGrid.innerHTML = "";
+
+        var presetValue = document.querySelector(
+          'input[name="preset"]:checked'
+        ).value;
+        var genderValue = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        var firstHalfUrl;
+        var secondHalfUrl;
+        var gender;
+
+        if (presetValue === "preset1" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=1&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        } else if (presetValue === "preset1" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=2&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        }
+        // outfit viewer
+        else if (presetValue === "preset2" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=1&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        } else if (presetValue === "preset2" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=2&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        }
+        // hat viewer
+        else if (presetValue === "preset3" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/hat?scale=0.75&gender=1&style=5&rotation=0&body=5&hat=";
+          secondHalfUrl =
+            "&hat_tone1=16770623&hat_tone2=16711597&hat_tone3=16711597&hat_tone4=16711597&hat_tone5=16711597&hat_tone6=16711597&hat_tone7=16711597&hat_tone8=16711597&hat_tone9=16711597";
+        } else if (presetValue === "preset3" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/hat?scale=0.75&gender=2&style=5&rotation=0&body=5&hat=";
+          secondHalfUrl =
+            "&hat_tone1=16770623&hat_tone2=16711597&hat_tone3=16711597&hat_tone4=16711597&hat_tone5=16711597&hat_tone6=16711597&hat_tone7=16711597&hat_tone8=16711597&hat_tone9=16711597";
+        }
+        // outerwear viewer
+        else if (presetValue === "preset4" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/outerwear?scale=4&gender=1&style=5&outerwear=";
+          secondHalfUrl =
+            "&outerwear_tone1=3955589&outerwear_tone2=2113643&outerwear_tone3=3955589&outerwear_tone4=7772100&outerwear_tone5=3955589&outerwear_tone6=14277077&outerwear_tone7=3955589&outerwear_tone8=3955589&outerwear_tone9=3955589&outerwear_tone10=3955589&clothing_type=1&version=0";
+        } else if (presetValue === "preset4" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/outerwear?scale=4&gender=2&style=5&outerwear=";
+          secondHalfUrl =
+            "&outerwear_tone1=3955589&outerwear_tone2=2113643&outerwear_tone3=3955589&outerwear_tone4=7772100&outerwear_tone5=3955589&outerwear_tone6=14277077&outerwear_tone7=3955589&outerwear_tone8=3955589&outerwear_tone9=3955589&outerwear_tone10=3955589&clothing_type=1&version=0";
+        }
+        // top viewer
+        else if (presetValue === "preset5" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/top?scale=4&gender=1&style=5&top=";
+          secondHalfUrl = "&clothing_type=1";
+        } else if (presetValue === "preset5" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/top?scale=4&gender=2&style=5&top=";
+          secondHalfUrl = "&clothing_type=1";
+        }
+        // else if (presetValue === "preset5" && genderValue === "gender1") {
+        //   firstHalfUrl =
+        //     "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=3&gender=1&style=1&rotation=7&skin_tone=16777204&clothing_type=1&top=";
+        //   secondHalfUrl =
+        //     "&top_tone1=2042949&top_tone10=2042949&top_tone2=16448250&top_tone3=2042949&top_tone4=2042949&top_tone5=2042949&top_tone6=2042949&top_tone7=2042949&top_tone8=2042949&top_tone9=2042949&version=0";
+        // } else if (presetValue === "preset5" && genderValue === "gender2") {
+        //   firstHalfUrl =
+        //     "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=3&gender=2&style=1&rotation=7&skin_tone=16777204&clothing_type=1&top=";
+        //   secondHalfUrl =
+        //     "&top_tone1=2042949&top_tone10=2042949&top_tone2=16448250&top_tone3=2042949&top_tone4=2042949&top_tone5=2042949&top_tone6=2042949&top_tone7=2042949&top_tone8=2042949&top_tone9=2042949&version=0";
+        // }
+        // footwear viewer
+        else if (presetValue === "preset6" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/footwear?scale=4&gender=1&style=5&footwear=";
+          secondHalfUrl =
+            "&footwear_tone1=16448250&footwear_tone10=15353658&footwear_tone2=2829099&footwear_tone3=15353658&footwear_tone4=2829099&footwear_tone5=16448250&footwear_tone6=2829099&footwear_tone7=2829099&footwear_tone8=15353658&footwear_tone9=16772143&clothing_type=1&version=1";
+        } else if (presetValue === "preset6" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/footwear?scale=4&gender=2&style=5&footwear=";
+
+          secondHalfUrl =
+            "&footwear_tone1=16448250&footwear_tone10=15353658&footwear_tone2=2829099&footwear_tone3=15353658&footwear_tone4=2829099&footwear_tone5=16448250&footwear_tone6=2829099&footwear_tone7=2829099&footwear_tone8=15353658&footwear_tone9=16772143&clothing_type=1&version=1";
+        }
+        // bottom viewer
+        else if (presetValue === "preset7" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/bottom?scale=1&gender=1&style=5&bottom=";
+          secondHalfUrl = "&clothing_type=1";
+        } else if (presetValue === "preset7" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/bottom?scale=1&gender=2&style=5&bottom=";
+
+          secondHalfUrl = "&clothing_type=1";
+        }
+        // 2d avatar history
+        else if (presetValue === "preset2dAvatar") {
+          firstHalfUrl =
+            "https://sdk.bitmoji.com/render/panel/10214657-99132441489_";
+
+          secondHalfUrl = "-s5-v1.webp?transparent=1&scale=0";
+        }
+        // 3d avatar history
+        else if (presetValue === "preset3dAvatar") {
+          firstHalfUrl =
+            "https://images.bitmoji.com/3d/avatar/108840709-99132441489_";
+
+          secondHalfUrl = "-s5-v1.webp";
+        }
+
+        var currentIndex = 0; // Initialize currentIndex here
+
+        function loadBatch() {
+          var endIndex = Math.min(
+            currentIndex + batchSize - 1,
+            numbers.length - 1
+          );
+          for (var i = currentIndex; i <= endIndex; i++) {
+            var imageUrl = firstHalfUrl + numbers[i] + secondHalfUrl;
+            var container = createImageContainer(imageUrl, numbers[i]);
+            imageGrid.appendChild(container);
+          }
+          currentIndex += batchSize;
+          if (currentIndex <= numbers.length - 1) {
+            setTimeout(loadBatch, 100); // Delay between batches (100ms)
+          }
+        }
+
+        loadBatch(); // Call loadBatch() after currentIndex is initialized
+      }
+
+      function copyIds() {
+        var ids = Array.from(document.querySelectorAll(".number")).map(
+          function (element) {
+            return element.textContent;
+          }
+        );
+        var idsText = ids.join(", ");
+        copyToClipboard(idsText);
+        alert("IDs copied to clipboard: " + idsText);
+      }
+
+      function copyPhotos() {
+        var photos = Array.from(
+          document.querySelectorAll(".image-container img")
+        ).map(function (element) {
+          return element.src;
+        });
+        var photosText = photos.join("\n");
+        copyToClipboard(photosText);
+        alert("Photos copied to clipboard:\n" + photosText);
+      }
+
+      function copyAll() {
+        var ids = Array.from(document.querySelectorAll(".number")).map(
+          function (element) {
+            return element.textContent;
+          }
+        );
+        var photos = Array.from(
+          document.querySelectorAll(".image-container img")
+        ).map(function (element) {
+          return element.src;
+        });
+        var allText =
+          "IDs:\n" + ids.join(", ") + "\n\nPhotos:\n" + photos.join("\n");
+        copyToClipboard(allText);
+        alert("IDs and photos copied to clipboard:\n" + allText);
+      }
+
+      function copyToClipboard(text) {
+        var textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.style.position = "fixed"; // Prevent scrolling to bottom
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+    </script>
+  </body>
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!-- old version -->
+  <!-- old version -->
+  <!-- <html>
+  <head>
+    <title>Bitmoji URL Generator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #8bbd90;
+      }
+
+      .container {
+        max-width: 100vw;
+        margin: 0 auto;
+        background-color: #88cf97;
+        background-image: url("https://i.ibb.co/sy2QP28/bitmoji.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000, -2px 2px 0 #000,
+          2px 2px 0 #000;
+      }
+
+      .controls {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .label {
+        font-weight: bold;
+        display: flex;
+        align-items: flex-end;
+        margin: 2rem auto 0.5rem auto;
+      }
+
+      .input {
+        padding: 10px;
+        border: 1px solid #45c25a;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 25%;
+        margin: 0 auto;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 175px;
+        margin: 0 auto;
+        margin-top: 1%;
+      }
+
+      .button:hover {
+        background-color: #3f8b43;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .grid img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .grid .number {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      /* container */
+      .copy-buttons,
+      .presetGenderContainer,
+      .presetOtherContainer,
+      .presetGenderSelector {
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+        flex-direction: row;
+      }
+
+      /* buttons */
+      .copyButton {
+        margin: 10px;
+      }
+
+      .presetOtherContainer,
+      .presetGenderSelector {
+        width: 25%;
+      }
+
+      .divPreset1,
+      .divPreset2,
+      .divPreset3,
+      .divPreset4,
+      .divGender1,
+      .divGender2,
+      .divPreset5 {
+        margin: auto;
+        margin: 2rem auto 0.5rem auto;
+      }
+
+      .presetLabel,
+      .genderLabel {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bitmoji C4ACK3R</h1>
+      <div class="controls">
+        <!-- <label for="firstHalfUrlInput" class="label">First Half URL:</label><input type="text" id="firstHalfUrlInput" class="input"><label for="secondHalfUrlInput" class="label">Second Half URL:</label><input type="text" id="secondHalfUrlInput" class="input"> -->
+        <!-- <div class="presetGenderSelector">
+          <h1>Select a Gender to use Options below.</h1>
+          <div class="divGender1">
+            <input
+              type="radio"
+              name="gender"
+              class="genderInput"
+              id="gender1"
+              value="gender1"
+              checked=""
+            />
+            <label for="gender1" class="label genderLabel">Male Gender</label>
+          </div>
+          <div class="divGender2">
+            <input
+              type="radio"
+              name="gender"
+              class="genderInput"
+              id="gender2"
+              value="gender2"
+              checked=""
+            />
+            <label for="gender2" class="label genderLabel">Female Gender</label>
+          </div>
+        </div>
+        <div class="presetOtherContainer">
+          <div class="divPreset2">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset2"
+              value="preset2"
+              checked=""
+            />
+            <label for="preset2" class="label presetLabel">Outfits</label>
+          </div>
+          <div class="divPreset3">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset3"
+              value="preset3"
+              checked=""
+            />
+            <label for="preset3" class="label presetLabel">Hat/Glasses</label>
+          </div>
+          <div class="divPreset4">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset4"
+              value="preset4"
+            />
+            <label for="preset4" class="label presetLabel">Outerwear</label>
+          </div>
+          <div class="divPreset5">
+            <input
+              type="radio"
+              name="preset"
+              class="presetInput"
+              id="preset5"
+              value="preset5"
+            />
+            <label for="preset5" class="label presetLabel">Tops</label>
+          </div>
+        </div>
+        <label for="minInput" class="label">Min Number:</label>
+        <input type="number" id="minInput" class="input" />
+        <label for="maxInput" class="label">Max Number:</label>
+        <input type="number" id="maxInput" class="input" />
+        <label for="batchSizeInput" class="label">Batch Size:</label>
+        <input type="number" id="batchSizeInput" class="input" value="1000" />
+        <label for="minContainerWidthInput" class="label"
+          >Minimum Container Width:</label
+        >
+        <input
+          type="number"
+          id="minContainerWidthInput"
+          class="input"
+          value="100"
+        />
+        <button onclick="generateUrls()" class="button">Generate URLs</button>
+      </div>
+      <div class="copy-buttons">
+        <button onclick="copyIds()" class="button copyButton">
+          Copy All IDs
+        </button>
+        <button onclick="copyPhotos()" class="button copyButton">
+          Copy All Photos
+        </button>
+        <button onclick="copyAll()" class="button copyButton">
+          Copy Everything
+        </button>
+      </div>
+    </div>
+    <div class="grid" id="imageGrid"></div>
+    <script>
+      function createImageContainer(imageUrl, number) {
+        var container = document.createElement("div");
+        container.classList.add("image-container");
+        var image = new Image();
+        image.src = imageUrl;
+        image.onerror = function () { -->
+          <!-- // Remove image element and container if it fails to load
+          var parentContainer = this.parentNode;
+          parentContainer.parentNode.removeChild(parentContainer);
+        };
+        image.onload = function () {
+          // Remove image element and container if the container has a width smaller than the specified minimum width
+          var parentContainer = this.parentNode;
+          var containerWidth = parentContainer.offsetWidth;
+          var minContainerWidth = parseInt(
+            document.getElementById("minContainerWidthInput").value
+          );
+          if (containerWidth < minContainerWidth) {
+            parentContainer.parentNode.removeChild(parentContainer);
+          }
+        };
+        var numberElement = document.createElement("div");
+        numberElement.classList.add("number");
+        numberElement.textContent = number;
+        container.appendChild(image);
+        container.appendChild(numberElement);
+        return container;
+      }
+
+      function generateUrls() {
+        var minNumber = parseInt(document.getElementById("minInput").value);
+        var maxNumber = parseInt(document.getElementById("maxInput").value);
+        var batchSize = parseInt(
+          document.getElementById("batchSizeInput").value
+        );
+        var imageGrid = document.getElementById("imageGrid");
+        if (isNaN(minNumber) || isNaN(maxNumber)) {
+          alert("Please enter valid numbers for min and max.");
+          return;
+        }
+        imageGrid.innerHTML = "";
+        var currentIndex = minNumber;
+        var presetValue = document.querySelector(
+          'input[name="preset"]:checked'
+        ).value;
+        var genderValue = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        var firstHalfUrl;
+        var secondHalfUrl;
+        var gender;
+        if (presetValue === "preset1" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=1&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        } else if (presetValue === "preset1" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=2&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        } else if (presetValue === "preset2" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=1&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        } else if (presetValue === "preset2" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=1&gender=2&style=1&rotation=7&skin_tone=16777204&outfit=";
+          secondHalfUrl = "";
+        } else if (presetValue === "preset3" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/hat?scale=0.75&gender=1&style=5&rotation=0&body=5&hat=";
+          secondHalfUrl =
+            "&hat_tone1=16770623&hat_tone2=16711597&hat_tone3=16711597&hat_tone4=16711597&hat_tone5=16711597&hat_tone6=16711597&hat_tone7=16711597&hat_tone8=16711597&hat_tone9=16711597";
+        } else if (presetValue === "preset3" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/bm-preview/v3/avatar/hat?scale=0.75&gender=2&style=5&rotation=0&body=5&hat=";
+          secondHalfUrl =
+            "&hat_tone1=16770623&hat_tone2=16711597&hat_tone3=16711597&hat_tone4=16711597&hat_tone5=16711597&hat_tone6=16711597&hat_tone7=16711597&hat_tone8=16711597&hat_tone9=16711597";
+        } else if (presetValue === "preset4" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=3&gender=1&style=1&rotation=7&skin_tone=16777204&clothing_type=1&outerwear=";
+          secondHalfUrl =
+            "&outerwear_tone1=3955589&outerwear_tone2=2113643&outerwear_tone3=3955589&outerwear_tone4=7772100&outerwear_tone5=3955589&outerwear_tone6=14277077&outerwear_tone7=3955589&outerwear_tone8=3955589&outerwear_tone9=3955589&outerwear_tone10=3955589";
+        } else if (presetValue === "preset4" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=3&gender=2&style=1&rotation=7&skin_tone=16777204&clothing_type=1&outerwear=";
+          secondHalfUrl =
+            "&outerwear_tone1=3955589&outerwear_tone2=2113643&outerwear_tone3=3955589&outerwear_tone4=7772100&outerwear_tone5=3955589&outerwear_tone6=14277077&outerwear_tone7=3955589&outerwear_tone8=3955589&outerwear_tone9=3955589&outerwear_tone10=3955589";
+        } else if (presetValue === "preset5" && genderValue === "gender1") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=3&gender=1&style=1&rotation=7&skin_tone=16777204&clothing_type=1&top=";
+          secondHalfUrl =
+            "&top_tone1=2042949&top_tone10=2042949&top_tone2=16448250&top_tone3=2042949&top_tone4=2042949&top_tone5=2042949&top_tone6=2042949&top_tone7=2042949&top_tone8=2042949&top_tone9=2042949&version=0";
+        } else if (presetValue === "preset5" && genderValue === "gender2") {
+          firstHalfUrl =
+            "https://preview.bitmoji.com/avatar-builder-v3/preview/mannequin-left?scale=3&gender=2&style=1&rotation=7&skin_tone=16777204&clothing_type=1&top=";
+          secondHalfUrl =
+            "&top_tone1=2042949&top_tone10=2042949&top_tone2=16448250&top_tone3=2042949&top_tone4=2042949&top_tone5=2042949&top_tone6=2042949&top_tone7=2042949&top_tone8=2042949&top_tone9=2042949&version=0";
+        }
+
+        function loadBatch() {
+          var endIndex = Math.min(currentIndex + batchSize - 1, maxNumber);
+          for (var i = currentIndex; i <= endIndex; i++) {
+            var imageUrl = firstHalfUrl + i + secondHalfUrl;
+            var container = createImageContainer(imageUrl, i);
+            imageGrid.appendChild(container);
+          }
+          currentIndex += batchSize;
+          if (currentIndex <= maxNumber) {
+            setTimeout(loadBatch, 100); // Delay between batches (100ms)
+          }
+        }
+        loadBatch();
+      }
+
+      function copyIds() {
+        var ids = Array.from(document.querySelectorAll(".number")).map(
+          function (element) {
+            return element.textContent;
+          }
+        );
+        var idsText = ids.join(", ");
+        copyToClipboard(idsText);
+        alert("IDs copied to clipboard: " + idsText);
+      }
+
+      function copyPhotos() {
+        var photos = Array.from(
+          document.querySelectorAll(".image-container img")
+        ).map(function (element) {
+          return element.src;
+        });
+        var photosText = photos.join("\n");
+        copyToClipboard(photosText);
+        alert("Photos copied to clipboard:\n" + photosText);
+      }
+
+      function copyAll() {
+        var ids = Array.from(document.querySelectorAll(".number")).map(
+          function (element) {
+            return element.textContent;
+          }
+        );
+        var photos = Array.from(
+          document.querySelectorAll(".image-container img")
+        ).map(function (element) {
+          return element.src;
+        });
+        var allText =
+          "IDs:\n" + ids.join(", ") + "\n\nPhotos:\n" + photos.join("\n");
+        copyToClipboard(allText);
+        alert("IDs and photos copied to clipboard:\n" + allText);
+      }
+
+      function copyToClipboard(text) {
+        var textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.style.position = "fixed"; // Prevent scrolling to bottom
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+    </script>
+  </body>
+</html> --> -->
+
+  <!-- old version -->
+  <!-- old version -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+</html>
